@@ -95,8 +95,9 @@ class Blect_Child_Theme_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_dequeue_script('application-js');
 		wp_deregister_script('application-js');
-		wp_enqueue_script( 'application-js', trailingslashit( get_stylesheet_directory_uri() ) . 'assets/js/application.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( 'c-application-js', trailingslashit( get_stylesheet_directory_uri() ) . 'assets/js/application.js', array( 'jquery', 'tweenmax-js-cdn', 'jquery-easing-js', 'vendor-js' ), $this->version, true );
 
 	}
 
